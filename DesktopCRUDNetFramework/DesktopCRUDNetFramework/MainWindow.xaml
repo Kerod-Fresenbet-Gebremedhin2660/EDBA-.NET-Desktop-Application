@@ -1,0 +1,47 @@
+﻿<Window x:Class="DesktopCRUDNetFramework.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="AnimatedButton" Height="300" Width="300"
+  Background="Aquamarine">
+    <!-- Buttons arranged vertically inside a StackPanel. -->
+    <StackPanel VerticalAlignment="Bottom">
+        <ListView Height="100" Margin="0,0,-0.4,0" Name="SLV">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="id" Width="20" DisplayMemberBinding="{Binding id}" />
+                    <GridViewColumn Header="part_name" Width="100" DisplayMemberBinding="{Binding part_name}" />
+                    <GridViewColumn Header="cutomer_name" Width="150" DisplayMemberBinding="{Binding customer_name}" />
+                    <GridViewColumn Header="retailer_name" Width="150" DisplayMemberBinding="{Binding retailer_name}" />
+                    <GridViewColumn Header="price" Width="150" DisplayMemberBinding="{Binding price}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Name="id_cont" Height="23" Margin="10,0,-0.4,0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="Identifier" TextWrapping="Wrap" Text="Identifier: "  Margin="0,0,0,0.2" Width="57"/>
+            <TextBox Height="23" TextWrapping="Wrap" Margin="0,0,-0.4,0.2" x:Name="id_tbox" HorizontalAlignment="Left" Width="229"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Name="part_name_cont" Height="23" Margin="10,0,-0.4,0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="p_name" TextWrapping="Wrap" Text="Part Name: "  Margin="0,0,0,0.2" Width="60" HorizontalAlignment="Left"/>
+            <TextBox Height="23" TextWrapping="Wrap" Margin="0,0,-0.4,0.2" x:Name="part_tbox" Width="224" />
+        </StackPanel>
+
+        <StackPanel  Orientation="Horizontal" Name="customer_name_cont" Height="24" Margin="10,0,-0.4,0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="c_name" TextWrapping="Wrap" Text="Cust-Name: " Width="67" HorizontalAlignment="Left"/>
+            <TextBox Height="23" TextWrapping="Wrap" Margin="0,0,-0.4,0" x:Name="customer_tbox" Width="219"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Name="retailer_name_cont" Height="24" Margin="10,0,-0.4,0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="r_name" TextWrapping="Wrap" Text="Ret-Name: " Width="67" HorizontalAlignment="Left"/>
+            <TextBox Height="23" TextWrapping="Wrap" Margin="0,0,-0.4,0" x:Name="retailer_tbox" Width="217" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Name="price_cont" Height="24" Margin="10,0,-0.4,0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="pr" TextWrapping="Wrap" Text="Price: " Width="67" HorizontalAlignment="Left"/>
+            <TextBox Height="23" TextWrapping="Wrap" Margin="0,0,-0.4,0" x:Name="price_tbox" Width="217"/>
+        </StackPanel>
+        <Button Click="Fetch" Content="Fetch"/>
+        <Button Click="Fetch_2" Content="Fetch_By_Id"/>
+        <Button Click="Insert" Content="Insert"/>
+        <Button Click="Remove" Content="Remove"/>
+        <Button Click="Update" Content="Update"/>
+    </StackPanel>
+</Window>
